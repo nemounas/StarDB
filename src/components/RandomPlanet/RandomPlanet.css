@@ -1,0 +1,24 @@
+.RandomPlanet {
+    grid-area: r;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    min-height: 200px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+.pic {
+    width: 200px;
+    
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
