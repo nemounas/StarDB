@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './RandomPlanet.css'
 import SwapiService from '../../services/SwapiService'
 import Loding from '../Loding'
+import ErrorMessange from '../ErrorMessange'
 
 export default class RandomPlanet extends Component {
 
@@ -9,7 +10,8 @@ export default class RandomPlanet extends Component {
 
     state = {
         planet: {},
-        loding: true
+        loding: true,
+        error: false
     }
 
     constructor() {
@@ -24,25 +26,37 @@ export default class RandomPlanet extends Component {
         })
     }
 
+    onError = (err) => {
+       this.setState({
+           error: true,
+           loding: false
+       })
+    }
+
     updatePlanet() {
-        const id = Math.floor(Math.random() * 25) + 2;
+        /* const id = Math.floor(Math.random() * 25) + 2; */
+        const id = 21 
         this.swapiService
             .getPlanet(id)
             .then(this.onPlanetLoaded)
+            .catch(this.onError)
     }
 
     render() {
 
-        const { planet, loding } = this.state
+        const { planet, loding, error } = this.state
 
-
+        const hasData = !(error || loding)
+        
+        const errorMessange = error ? <ErrorMessange /> : null
         const spiner = loding ? <Loding /> : null
-        const planetview = !loding ? <PlanetView planet={planet} /> : null
+        const planetview = hasData ? <PlanetView planet={planet} /> : null
 
 
         return (
 
             <div className="RandomPlanet">
+                {errorMessange}
                 {spiner}
                 {planetview}
             </div>
@@ -58,6 +72,7 @@ const PlanetView = ({ planet }) => {
 
     return (
         <React.Fragment>
+            <div></div>
             <div className="img">
                 <img className="pic" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="planet"></img>
             </div>
@@ -83,6 +98,7 @@ const PlanetView = ({ planet }) => {
                     <span>  {Diameter} </span>
                 </div>
             </div>
+            <div></div>
         </React.Fragment>
     )
 }

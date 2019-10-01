@@ -13,7 +13,7 @@ export default class App extends Component {
 
           <div className="App">
              <Header />
-             <RandomPlanet />
+             <RandomPlanet className="RandomPlanet"/>
              <ItemList />
              <PeopleDetails />
           </div>

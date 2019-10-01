@@ -7,19 +7,17 @@ export default class ItemList extends Component {
 
     render() {
         return (
+            <React.Fragment>
 
-            <div className="Loding">
+                <div></div>
                 <div className="img">
                     <img className="pic" src={LodingPlanet} alt="planet"></img>
                 </div>
                 <div>
-                    ggg
+
                 </div>
-
-
-
-            </div>
-
+                <div></div>
+            </React.Fragment>
         )
     }
 }

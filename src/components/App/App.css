@@ -4,8 +4,13 @@
      grid-template-rows: 60px 200px 8fr;
      grid-template-columns: 4fr 8fr;
      align-self: stretch;
+     
      grid-template-areas: 
      "h h"
      "r r"
      "i d"
+ }
+
+ .RandomPlanet {
+    justify-content: stretch;
  }
