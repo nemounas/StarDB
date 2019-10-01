@@ -1,3 +1,14 @@
 .PeopleDetails {
     grid-area: d;
+    margin-top: 50px;
+    
+}
+.PeopleDetailsWraper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    
+    
 }

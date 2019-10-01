@@ -9,14 +9,16 @@ export default class ItemList extends Component {
         return (
             <React.Fragment>
 
-                <div></div>
-                <div className="img">
-                    <img className="pic" src={LodingPlanet} alt="planet"></img>
+                 <div></div>
+                <div className="preloder">
+                   <div className="loder" ></div>
                 </div>
                 <div>
 
                 </div>
-                <div></div>
+                <div></div> 
+                
+
             </React.Fragment>
         )
     }

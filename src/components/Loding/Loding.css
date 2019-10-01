@@ -3,3 +3,36 @@
     display: grid;
     grid-template-columns: 3fr 3fr 3fr 3fr;
 }
+
+.preloder {
+    
+   
+    background: #222;
+    
+    
+}
+
+.preloder .loder {
+    width: 75px;
+    height: 75px;
+    border: 10px solid #222;
+    border-radius: 50%;
+    border-top-color: rgb(139, 201, 201); 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: 2s spin infinite linear;
+}
+
+@keyframes spin {
+    from{
+        transform: translate(-50%,-50%) rotate(0deg)
+    }
+    to{
+        transform: translate(-50%,-50%) rotate(360deg)
+    }
+}
+
+
+

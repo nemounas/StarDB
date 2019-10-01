@@ -9,10 +9,11 @@ export default class App extends Component {
   
 
   state = {
-    selectedPerson: null
+    selectedPerson: 5
   }
 
-   onPersonSelected (id) {
+   onPersonSelected = (id) => {
+     
           this.setState({
             selectedPerson: id
           })
@@ -21,11 +22,12 @@ export default class App extends Component {
 
 
     render(){
+      
         return (
 
           <div className="App">
              <Header />
-             <RandomPlanet className="RandomPlanet"/>
+             <RandomPlanet />
              <ItemList onItemSelected={this.onPersonSelected}/>
              <PeopleDetails personid={this.state.selectedPerson}/>
           </div>
