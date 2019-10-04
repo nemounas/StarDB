@@ -1,15 +1,6 @@
 
-.Loding {
-    display: grid;
-    grid-template-columns: 3fr 3fr 3fr 3fr;
-}
-
 .preloder {
-    
-   
-    background: #222;
-    
-    
+     background: #222;
 }
 
 .preloder .loder {

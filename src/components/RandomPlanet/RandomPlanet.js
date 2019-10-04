@@ -27,14 +27,14 @@ export default class RandomPlanet extends Component {
     }
 
     onError = (err) => {
-       this.setState({
-           error: true,
-           loding: false
-       })
+        this.setState({
+            error: true,
+            loding: false
+        })
     }
 
     updatePlanet = () => {
-        /* const id = Math.floor(Math.random() * 25) + 2; */ 
+        /* const id = Math.floor(Math.random() * 25) + 2; */
         const id = 4
         this.swapiService
             .getPlanet(id)
@@ -47,7 +47,7 @@ export default class RandomPlanet extends Component {
         const { planet, loding, error } = this.state
 
         const hasData = !(error || loding)
-        
+
         const errorMessange = error ? <ErrorMessange /> : null
         const spiner = loding ? <Loding /> : null
         const planetview = hasData ? <PlanetView planet={planet} /> : null
@@ -72,33 +72,37 @@ const PlanetView = ({ planet }) => {
 
     return (
         <React.Fragment>
-            <div></div>
-            <div className="img-wraper">
-                <img className="pic" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="planet"></img>
-            </div>
+            
+                
+               
+                <div className="RandomPlanet">
+                    <div className="img-wraper">
+                        <img className="pic" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="planet"></img>
+                    </div>
 
-            <div className="text">
-                <div className="title">
+                    <div className="text">
+                        <div className="title">
 
-                    <span> {PlanetName}</span>
+                            <span> {PlanetName}</span>
+                        </div>
+
+                        <div>
+                            <span> Population </span>
+                            <span> {Population} </span>
+                        </div>
+
+                        <div>
+                            <span>  RotationPeriod </span>
+                            <span>  {RotationPeriod} </span>
+                        </div>
+
+                        <div>
+                            <span>  Diameter </span>
+                            <span>  {Diameter} </span>
+                        </div>
+                    </div>
                 </div>
-
-                <div>
-                    <span> Population </span>
-                    <span> {Population} </span>
-                </div>
-
-                <div>
-                    <span>  RotationPeriod </span>
-                    <span>  {RotationPeriod} </span>
-                </div>
-
-                <div>
-                    <span>  Diameter </span>
-                    <span>  {Diameter} </span>
-                </div>
-            </div>
-            <div></div>
+           
         </React.Fragment>
     )
 }

@@ -1,64 +1,29 @@
 import React, { Component } from 'react'
 import './ItemList.css'
-import Loding from '../Loding';
-import SwapiService from '../../services/SwapiService'
 
-export default class ItemList extends Component {
+const ItemList = (props) => {
 
-  swapiService = new SwapiService();
+  const { data, onItemSelected, children: renderlabel } = props
 
-  state = {
-    peopleList: null,
+  const items = data.map((item) => {
+    const { id } = item
 
-  }
-
-
-  componentDidMount() {
-    this.swapiService
-      .getAllPeople()
-      .then((peopleList) => {
-        this.setState({ peopleList })
-      })
-
-  }
-
-  renderList(arr) {
-    return arr.map(({ id, name }) => {
-      return (
-        <li className="list-group-item"
-          key={id}
-          onClick={() => { this.props.onItemSelected(id) }}
-        >
-          {name}
-        </li>
-      );
-    });
-  }
-  
-  render() {
-
-    const { peopleList } = this.state
-
-    if (!peopleList) {
-      return ( 
-      <ul className="item-list list-group ItemList">
-      <li><Loding /></li>
-      </ul>
-      )
-    }
-
-    const item = this.renderList(peopleList)
+    const label = renderlabel(item)
 
     return (
-      <ul className="item-list list-group ItemList">
-        {item}
-      </ul>
+      <li className="list-group-item itemhover"
+        key={id}
+        onClick={() => onItemSelected(id)}
+      >
+        {label}
+      </li>
     )
-  }
+  })
+  
+  return (
+    <div>{items}</div>
+  )
 }
 
-const Loding1 = () => {
-  return (
-    <div></div>
-  )
-} 
+export default ItemList
+

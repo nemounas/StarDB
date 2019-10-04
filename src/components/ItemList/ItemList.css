@@ -1,6 +1,10 @@
 .ItemList {
-    grid-area: i;
-    margin-top: 50px;
+     grid-area: i;
+    margin-top: 100px;
     
+}
+
+.itemhover:hover {
+    background: #2b2a2a;
 }
 

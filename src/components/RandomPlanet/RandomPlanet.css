@@ -1,9 +1,11 @@
 .RandomPlanet {
     grid-area: r;
-    display: grid;
-    grid-template-columns: 3fr 3fr 3fr 3fr;
+    display: flex;
+    justify-content: center;
     background: #303030;
-    min-height: 250px;
+    
+    border: 2px solid blue;
+    
     
     
 }
@@ -12,7 +14,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    margin-left: 50px;
 }
 
 .pic {
