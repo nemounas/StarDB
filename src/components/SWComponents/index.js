@@ -8,8 +8,8 @@ import {
 
 import {
     PersonsDetails,
-    StarshipsDeteils,
-    PlanetsDeteils
+    StarshipsDetails,
+    PlanetsDetails
     
 }
     from './Details'
@@ -19,7 +19,8 @@ export {
     StarshipsList,
     PlanetsList,
     PersonsDetails,
-    StarshipsDeteils,
-    PlanetsDeteils
+    StarshipsDetails,
+    PlanetsDetails
 }
+
 

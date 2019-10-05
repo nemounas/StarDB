@@ -1,74 +1,87 @@
 import React from 'react'
 import ItemDetails, { Record } from '../ItemDetails/ItemDetails'
-import SwapiService from '../../services/SwapiService'
-
-const swapiService = new SwapiService()
-
-const {
-    getPerson,
-    getPlanet,
-    getStarship,
-    getPesonImage,
-    getPlanetImage,
-    getStarshipImage,
-} = swapiService
-
+import { SwapiServiceConsumer } from '../SwapiServiceContext'
 
 const PersonsDetails = ({ itemid }) => {
 
     return (
+        <SwapiServiceConsumer>
+            {
+                ({ getPerson, getPesonImage }) => {
+                    return (
+                        <ItemDetails
+                            itemid={itemid}
 
-        <ItemDetails
-            itemid={itemid}
-            
-            getData={getPerson}
-            getImageUrl={getPesonImage}>
+                            getData={getPerson}
+                            getImageUrl={getPesonImage}>
 
-            <Record field="gender" label="Gender" />
-            <Record field="eyeColor" label="Eye Color" />
+                            <Record field="gender" label="Gender" />
+                            <Record field="eyeColor" label="Eye Color" />
 
-        </ItemDetails>
+                        </ItemDetails>
+                    )
+                }
+            }
+
+        </SwapiServiceConsumer>
+
 
     )
 
 
 }
-const StarshipsDeteils = ({ itemid }) => {
+const StarshipsDetails = ({ itemid }) => {
 
     return (
+        <SwapiServiceConsumer>
+            {
+                ({ getStarship, getStarshipImage }) => {
+                    return (
+                    <ItemDetails
+                        itemid={itemid}
 
-        <ItemDetails
-            itemid={itemid}
-            
-            getData={getStarship}
-            getImageUrl={getStarshipImage}>
+                        getData={getStarship}
+                        getImageUrl={getStarshipImage}>
 
-            <Record field="name" label="name" />
-          
+                        <Record field="name" label="name" />
 
-        </ItemDetails>
+
+                    </ItemDetails>
+                    )
+                }
+            }
+        </SwapiServiceConsumer>
+
     )
 }
-const PlanetsDeteils = ({ itemid }) => {
-     
+const PlanetsDetails = ({ itemid }) => {
+
     return (
+        <SwapiServiceConsumer>
+            {
+                    ({getPlanet, getPlanetImage}) => {
+                    return (
+                    <ItemDetails
+                        itemid={itemid}
 
-        <ItemDetails
-            itemid={itemid}
-            
-            getData={getPlanet}
-            getImageUrl={getPlanetImage}>
+                        getData={getPlanet}
+                        getImageUrl={getPlanetImage}>
 
-            <Record field="name" label="name" />
-            <Record field="Population" label="Population" />
+                        <Record field="name" label="name" />
+                        <Record field="Population" label="Population" />
 
-        </ItemDetails>
+                    </ItemDetails>
+                    )
+                }
+            }
+        </SwapiServiceConsumer>
+
 
     )
 }
 
 export {
     PersonsDetails,
-    StarshipsDeteils,
-    PlanetsDeteils
+    StarshipsDetails,
+    PlanetsDetails
 }

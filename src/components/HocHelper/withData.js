@@ -14,7 +14,6 @@ const withData = (View, getData) => {
 
       getData()
         .then((data) => {
-          console.log(data)
           this.setState({
             data
           });

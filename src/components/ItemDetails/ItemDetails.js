@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SwapiService from '../../services/SwapiService'
 import './ItemDetails.css'
-import Loding from '../Loding'
+
 
 
 
@@ -39,7 +39,7 @@ export default class ItemDetails extends Component {
     
     
     if (!itemid) {
-      return
+      return 
     }
     
     getData(itemid)
@@ -60,7 +60,7 @@ export default class ItemDetails extends Component {
       return (
         <div className="PeopleDetails">
           <div className="DefautWraper">
-            <Loding />
+          <div>Please, select item</div>
           </div>
         </div>
 

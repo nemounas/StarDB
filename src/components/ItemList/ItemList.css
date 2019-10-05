@@ -6,5 +6,6 @@
 
 .itemhover:hover {
     background: #2b2a2a;
+    cursor: pointer;
 }
 
