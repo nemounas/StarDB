@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Row from '../Row'
-import {PersonsList} from '../SWComponents'
-import {PersonsDetails} from '../SWComponents'
+import {PersonList} from '../SWComponents'
+import {PersonDetails} from '../SWComponents'
 
 
 export default class PeoplePage extends Component {
@@ -20,8 +20,8 @@ export default class PeoplePage extends Component {
 
         return (
             <Row
-             left={<PersonsList /* onItemSelected = {this.onItemSelected} */ />}
-             right={<PersonsDetails itemid={selectItem} />} 
+             left={<PersonList  onItemSelected = {this.onItemSelected} />}
+             right={<PersonDetails itemid={selectItem} />} 
              />
         )
     }

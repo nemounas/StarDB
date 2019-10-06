@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Row from '../Row'
-import {PlanetsList} from '../SWComponents'
-import {PlanetsDetails} from '../SWComponents'
+import {PlanetList} from '../SWComponents'
+import {PlanetDetails} from '../SWComponents'
 
 
 export default class PlanetsPage extends Component {
@@ -20,8 +20,8 @@ export default class PlanetsPage extends Component {
 
         return (
             <Row
-             left={<PlanetsList onItemSelected = {this.onItemSelected} />}
-             right={<PlanetsDetails itemid={selectItem} />} 
+             left={<PlanetList onItemSelected = {this.onItemSelected} />}
+             right={<PlanetDetails itemid={selectItem} />} 
              />
         )
     }

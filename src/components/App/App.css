@@ -1,7 +1,12 @@
+ body {
+     background: #303030;
+ }
+ 
  .App {
+     
      display: grid;
      margin-left: 50px;
-     grid-template-rows: 60px 1fr;
+     grid-template-rows: 60px 2fr;
      grid-template-columns:1fr 1fr;
      grid-template-areas: 
      "h h"
