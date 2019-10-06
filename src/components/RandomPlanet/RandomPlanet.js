@@ -7,11 +7,15 @@ import ErrorMessange from '../ErrorMessange'
 export default class RandomPlanet extends Component {
 
     swapiService = new SwapiService()
+ 
+    static propType = {
+        
+    }
 
     state = {
         planet: {},
         loding: true,
-        error: false
+        error: false,
     }
 
     componentDidMount() {
@@ -34,8 +38,7 @@ export default class RandomPlanet extends Component {
     }
 
     updatePlanet = () => {
-        /* const id = Math.floor(Math.random() * 25) + 2; */
-        const id = 4
+        const id = Math.floor(Math.random() * 25) + 2;
         this.swapiService
             .getPlanet(id)
             .then(this.onPlanetLoaded)
@@ -43,6 +46,10 @@ export default class RandomPlanet extends Component {
     }
 
     render() {
+ 
+        RandomPlanet.defaultProps = {
+            updateinterval: 10000
+        }
 
         const { planet, loding, error } = this.state
 
@@ -52,6 +59,7 @@ export default class RandomPlanet extends Component {
         const spiner = loding ? <Loding /> : null
         const planetview = hasData ? <PlanetView planet={planet} /> : null
 
+        
 
         return (
 
@@ -65,6 +73,7 @@ export default class RandomPlanet extends Component {
     }
 }
 
+
 const PlanetView = ({ planet }) => {
 
     const { PlanetName, Population,
@@ -73,9 +82,7 @@ const PlanetView = ({ planet }) => {
     return (
         <React.Fragment>
             
-                
-               
-                <div className="RandomPlanet">
+              <div className="RandomPlanet">
                     <div className="img-wraper">
                         <img className="pic" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="planet"></img>
                     </div>

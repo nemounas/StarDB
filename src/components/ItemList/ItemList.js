@@ -5,6 +5,8 @@ const ItemList = (props) => {
 
   const { data, onItemSelected, children: renderlabel } = props
 
+  
+
   const items = data.map((item) => {
     const { id } = item
 
@@ -19,6 +21,10 @@ const ItemList = (props) => {
       </li>
     )
   })
+
+  ItemList.defaultProps = {
+    onItemSelected: () => {}
+  }
   
   return (
     <div>{items}</div>

@@ -6,7 +6,7 @@
      grid-template-areas: 
      "h h"
      "r r"
-     "i i"
+     "row row"
      
  }
 
@@ -18,6 +18,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+    
     
 }
 
@@ -31,9 +32,10 @@
 }
 
 .Row {
+    grid-area: row;
     display: grid;
-    grid-template-columns: 50% 50%;
-    border: 2px solid red;
+    grid-template-columns: 4fr 8fr;
+    
 }
 
 .pic {

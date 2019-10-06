@@ -3,11 +3,8 @@
     display: flex;
     justify-content: center;
     background: #303030;
-    
-    border: 2px solid blue;
-    
-    
-    
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .text {
@@ -20,21 +17,18 @@
 .pic {
     width: 150px;
     height: 150px;
-    
-    
 }
+
 .img-wraper {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .title {
     margin-bottom: 30px;
     font-size: 20px;
     font-weight: bold;
-    
 }
 
 
