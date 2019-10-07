@@ -6,7 +6,7 @@ import RandomPlanet from '../RandomPlanet/'
 import { SwapiServiceProvider } from '../SwapiServiceContext'
 import DummySwapiService from '../../services/DummySwapiService'
 import { PeoplePage, StarshipsPage, PlanetsPage } from '../Pages'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import {StarshipDetails} from '../SWComponents'
 import {LoginPage, SecretPage} from '../Pages'
 
@@ -36,6 +36,7 @@ export default class App extends Component {
             <Header />
            {/*  <RandomPlanet /> */}
             
+            <Switch>
             <Route path="/" exact
              render={()=><h2>Welcome to StarDB</h2>} />
             <Route path="/people/:id?"  component={PeoplePage} />
@@ -55,6 +56,8 @@ export default class App extends Component {
               onLogin={this.onLogin}
               />)}
             />
+            <Redirect to="/" />
+            </Switch>
 
           </div>
         </BrowserRouter>
